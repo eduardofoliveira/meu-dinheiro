@@ -5,8 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["devpleno", "meu-dinheiro"],
+  "author": "Eduardo F Oliveira",
   "license": "ISC",
   "repository": {
     "type": "git",
