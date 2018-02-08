@@ -1,12 +1,20 @@
 {
   "name": "meu-dinheiro",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardofoliveira/meu-dinheiro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eduardofoliveira/meu-dinheiro/issues"
+  },
+  "homepage": "https://github.com/eduardofoliveira/meu-dinheiro#readme",
+  "description": ""
 }
