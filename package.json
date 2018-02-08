@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["devpleno", "meu-dinheiro"],
+  "keywords": [
+    "devpleno",
+    "meu-dinheiro"
+  ],
   "author": "Eduardo F Oliveira",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/eduardofoliveira/meu-dinheiro.git"
@@ -16,5 +20,8 @@
     "url": "https://github.com/eduardofoliveira/meu-dinheiro/issues"
   },
   "homepage": "https://github.com/eduardofoliveira/meu-dinheiro#readme",
-  "description": ""
+  "description": "Projeto do 1° Fullstack Academy",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
