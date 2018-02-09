@@ -1,0 +1,27 @@
+<% include template/header %>
+    <div class="calculadora">
+        <h2>Calculadora</h2>
+        <div class="form-calculadora">
+            <form method="get">
+                <label for="inicial">Valor inicial: </label>
+                <input type="text" name="valorInicial" id="inicial"><br>
+                    
+                <label for="taxa">Taxa a.m: </label>
+                <input type="text" name="taxa" id="taxa"><br>
+                    
+                <label for="tempo">Quantidades meses: </label>
+                <input type="text" name="tempo" id="tempo"><br>
+                    
+                <button type="submit">Calcular</button>
+                <div style="clear: both;"></div>
+            </form>
+        </div>
+            
+        <% if(resultado.calculado){ %>
+        <div class="resultado">
+            <h2>Resultado</h2><br>
+            <p>R$ <%= resultado.total.toFixed(2) %></p>
+        </div>
+        <% } %>
+    </div>
+<% include template/footer %>

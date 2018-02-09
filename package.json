@@ -22,6 +22,7 @@
   "homepage": "https://github.com/eduardofoliveira/meu-dinheiro#readme",
   "description": "Projeto do 1° Fullstack Academy",
   "dependencies": {
+    "ejs": "^2.5.7",
     "express": "^4.16.2"
   }
 }
