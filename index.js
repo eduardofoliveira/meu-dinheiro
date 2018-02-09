@@ -28,3 +28,5 @@ app.get('/calculadora', (req, res) => {
 })
 
 app.listen(port, () => console.log('Server running...'))
+
+// Fullstack Academy aula 02 - 2:01:13
