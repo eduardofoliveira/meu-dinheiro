@@ -22,6 +22,22 @@
             <h2>Resultado</h2><br>
             <p>R$ <%= resultado.total.toFixed(2) %></p>
         </div>
+        <br>
+        <div class="resultado">
+        <h3>Evolução</h3>
+        <table>
+            <tr>
+                <th>Mês</th>
+                <th>Valor</th>
+            </tr>
+            <% resultado.evolucao.forEach((valor) => {  %>
+            <tr>
+                <td><%= valor.mes %></td>
+                <td>R$ <%= valor.juros.toFixed(2)  %></td>
+            </tr>
+            <% }) %>
+        </table>
         <% } %>
+        </div>
     </div>
 <% include template/footer %>

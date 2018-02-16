@@ -15,6 +15,13 @@ app.get('/', (req, res) => {
 })
 
 const calculoJuros = (p, i, n) => p*Math.pow(1+i, n)
+const evolucao = (p, i, n) => Array.from(new Array(n), (n, i) => i + 1)
+    .map(mes => {
+        return  {
+            mes,
+            juros: calculoJuros(p, i, mes)
+        }
+    })
 
 app.get('/calculadora', (req, res) => {
     const resultado = {
@@ -23,6 +30,11 @@ app.get('/calculadora', (req, res) => {
     if(req.query.valorInicial && req.query.taxa && req.query.tempo){
         resultado.calculado = true
         resultado.total = calculoJuros(
+            parseFloat(req.query.valorInicial),
+            parseFloat(req.query.taxa)/100,
+            parseInt(req.query.tempo)
+        )
+        resultado.evolucao = evolucao(
             parseFloat(req.query.valorInicial),
             parseFloat(req.query.taxa)/100,
             parseInt(req.query.tempo)
@@ -58,9 +70,23 @@ const insert = (db, collectionName, document) => {
     })
 }
 
+const subtotal = operacoes => {
+    let sub = 0
+    return operacoes.map(operacao => {
+        sub += operacao.valor
+        let newOperacao = {
+            valor: operacao.valor,
+            descricao: operacao.descricao,
+            sub: sub
+        }
+        return newOperacao
+    })
+}
+
 app.get('/operacoes', async (req, res) => {
     const operacoes = await findAll(app.db, 'operacoes')
-    res.render('operacoes', {operacoes})
+    const newOperacoes = subtotal(operacoes)
+    res.render('operacoes', {operacoes: newOperacoes})
 })
 
 app.get('/nova-operacao', (req, res) => {
@@ -84,4 +110,4 @@ MongoClient.connect(url, (err, client) => {
     }
 })
 
-// Aula 2 02:58:54
+// Aula 3 56:29
